@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Estilo para el título en la esquina superior izquierda */
+.title {
+  position: fixed; /* Fijamos el título en la esquina superior izquierda de la página */
+  top: 20px;       /* Espaciado desde el borde superior */
+  left: 20px;      /* Espaciado desde el borde izquierdo */
+  font-size: 1.5em; /* Tamaño del texto */
+  font-weight: bold; /* Negrita */
+  padding: 10px 20px; /* Espaciado interno */
+  background-color: #ffffff; /* Fondo blanco */
+  color: #333;     /* Color del texto */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: transform 0.2s, box-shadow 0.2s; /* Efecto de transición */
+  cursor: pointer; /* Cambia el cursor a mano */
+  z-index: 1000;   /* Asegura que esté sobre otros elementos */
+}
+
+/* Efecto de zoom al pasar el cursor */
+.title:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeIn 1s forwards;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.large {
+  grid-column: span 2;
+}
+
+.vertical {
+  grid-row: span 2; /* Hacer que ocupe dos filas */
+}
+
+.btn {
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  padding: 10px 15px;
+  margin-top: 8px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.youtube { background-color: #ffebee; color: #d32f2f; }
+.twitch { background-color: #f3e5f5; color: #6a1b9a; }
+.tiktok { background-color: #fce4ec; color: #d81b60; }
+.github { background-color: #eeeeee; color: #424242; }
+.discord { background-color: #e3f2fd; color: #1e88e5; }
+.soundcloud { background-color: #fff3e0; color: #f57c00; }
+.spotify { background-color: #e8f5e9; color: #388e3c; }
+.instagram { background-color: #fce4ec; color: #c2185b; }
+.twitter { background-color: #e1f5fe; color: #03a9f4; }
+.reddit { background-color: #ffebee; color: #d84315; }
+
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+
+.description {
+  font-size: 1.1em;
+  color: #555;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
